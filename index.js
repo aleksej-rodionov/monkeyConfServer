@@ -3,7 +3,7 @@ const Socket = require("websocket").server
 const server = http.createServer(() => {})
 
 server.listen(3000, () => {
-    console.log("server started on ficking port 3000")
+    console.log("server started on port 3000")
 })
 
 const webSocket = new Socket({httpServer:server})
@@ -16,8 +16,8 @@ webSocket.on('request', (req) => {
 
     connection.on('message',(message) => {
         const data = JSON.parse(message.utf8Data)
-        const user = findUser(data.name)
         console.log(data)
+        const user = findUser(data.name)
 
         switch(data.type) {
             case "store_user":
@@ -39,11 +39,11 @@ webSocket.on('request', (req) => {
                 let userToCall = findUser(data.target)
                 if (userToCall) {
                     connection.send(JSON.stringify({
-                        type:"call_response", data:"user is ready for you fucking call"
+                        type:"call_response", data:"user is ready for call"
                     }))
                 } else {
                     connection.send(JSON.stringify({
-                        type:"call_response", data:"user is NOT online"
+                        type:"call_response", data:"user is not online"
                     }))
                 }
             break
