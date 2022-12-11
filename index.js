@@ -35,7 +35,7 @@ webSocket.on('request', (req) => {
                 users.push(newUser)
             break
 
-            case "start_call":
+            case "start_call": // not needed when implement pushes
                 let userToCall = findUser(data.target)
                 if (userToCall) {
                     connection.send(JSON.stringify({
@@ -57,6 +57,7 @@ webSocket.on('request', (req) => {
                         data:data.data.sdp
                     }))
                 }
+                // console.log('offer been sent to ' + userToReceiveOffer)
             break
 
             case "create_answer":
@@ -68,6 +69,7 @@ webSocket.on('request', (req) => {
                         data:data.data.sdp
                     }))
                 }
+                // console.log('answer been sent to ' + userToReceiveAnswer)
             break
 
             case "ice_candidate":
@@ -83,6 +85,16 @@ webSocket.on('request', (req) => {
                         }
                     }))
                 }
+            break
+
+            case "end_call":
+                let userToToReceiveEndCallback = findUser(data.target)
+                if (userToToReceiveEndCallback) {
+                    userToToReceiveEndCallback.conn.send(JSON.stringify({ 
+                        type:"end_call", name:data.name
+                    }))
+                }
+                console.log('and_call Message sent to ' + data.target)
             break
         }
     })

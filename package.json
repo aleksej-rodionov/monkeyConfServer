@@ -20,5 +20,6 @@
     "url": "https://github.com/aleksej-rodionov/neopidorServer/issues"
   },
   "homepage": "https://github.com/aleksej-rodionov/neopidorServer#readme",
+  "devDependencies": {},
   "description": ""
 }
