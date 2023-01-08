@@ -1,5 +1,5 @@
 {
-  "name": "neopidorserver",
+  "name": "monkeyconfserver",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -14,12 +14,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aleksej-rodionov/neopidorServer.git"
+    "url": "git+https://github.com/aleksej-rodionov/monkeyConfServer.git"
   },
   "bugs": {
-    "url": "https://github.com/aleksej-rodionov/neopidorServer/issues"
+    "url": "https://github.com/aleksej-rodionov/monkeyConfServer/issues"
   },
-  "homepage": "https://github.com/aleksej-rodionov/neopidorServer#readme",
+  "homepage": "https://github.com/aleksej-rodionov/monkeyConfServer#readme",
   "devDependencies": {},
   "description": ""
 }
